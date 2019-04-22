@@ -95,50 +95,6 @@ class Admin extends Component {
 
     return (
       <PageContainer>
-        <Column1>
-          <Column1Button id="emailButton" onClick={handleEmailButtonClick}>
-            View Results
-          </Column1Button>
-          <Column1Button
-            id="informationButton"
-            style={{ paddingLeft: 10 }}
-            onClick={handleButtonClick}
-          >
-            View Information
-          </Column1Button>
-        </Column1>
-        <Column2>
-          <Column2Button id="deleteButton" onClick={handleButtonClick}>
-            Delete Data
-          </Column2Button>
-          <Column2Button
-            id="StatementsButton"
-            style={{ paddingLeft: 10 }}
-            onClick={handleButtonClick}
-          >
-            Add Statements
-          </Column2Button>
-        </Column2>
-        <Column3>
-          <label htmlFor="projectNameInput">
-            Project Name:
-            <input
-              id="projectNameInput"
-              type="text"
-              name="projectName"
-              defaultValue={projectName}
-            />
-          </label>
-          <label htmlFor="emailAddressInput">
-            Participant Name: (optional)
-            <input
-              id="participantNameInput"
-              type="text"
-              name="participant"
-              defaultValue="participant name"
-            />
-          </label>
-        </Column3>
         <BeginQsortButton id="goButton" onClick={handleButtonClick}>
           <span style={{ fontSize: 20 }}>Start</span> <br />
           <span style={{ fontSize: 110, margin: 0, padding: 0 }}>Q</span> <br />
@@ -176,10 +132,10 @@ const fadeOut = keyframes`
 `;
 
 const PageContainer = styled.div`
-  display: grid;
-  justify-items: center;
-  grid-template-columns: 341px 342px 342px 341px;
-  grid-template-rows: 350px auto;
+  /* display: grid; */
+  /* justify-items: center; */
+  /* grid-template-columns: 341px 342px 342px 341px; */
+  /* grid-template-rows: 350px auto; */
   width: 1024px;
   height: 768px;
   background-color: #323232;
