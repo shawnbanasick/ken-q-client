@@ -1,0 +1,103 @@
+:root {
+  --brand-1: hsl(188, 100%, 64%);
+  --brand-2: hsl(212, 100%, 64%);
+}
+
+.SubmitData {
+  margin: 0;
+  padding: 0;
+
+  background: whitesmoke;
+}
+
+.titleDivSubmitData {
+  background: steelblue;
+  height: 100px;
+  padding: 20px;
+}
+
+.loadingScreenTitle {
+  margin-right: 20px;
+  font-size: 25px;
+  font-style: italic;
+  padding-top: 45px;
+}
+
+h1 {
+  font-size: 36px;
+  color: white;
+}
+
+.loading-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: calc(100vh - 100px);
+}
+
+.bars-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.bar {
+  width: 8px;
+  height: 64px;
+
+  margin: 2px;
+
+  background: var(--brand-2);
+  border-radius: 2px;
+
+  transform: scaleY(0.1);
+
+  animation: loading 1.2s ease-in-out alternate infinite;
+  transform-origin: bottom center;
+}
+
+.bar-1 {
+  animation-delay: 0.1s;
+}
+
+.bar-2 {
+  animation-delay: 0.2s;
+}
+
+.bar-3 {
+  animation-delay: 0.3s;
+}
+
+.bar-4 {
+  animation-delay: 0.4s;
+}
+
+.bar-5 {
+  animation-delay: 0.5s;
+}
+
+.bar-6 {
+  animation-delay: 0.6s;
+}
+
+.bar-7 {
+  animation-delay: 0.7s;
+}
+
+.bar-8 {
+  animation-delay: 0.8s;
+}
+
+@keyframes loading {
+  0% {
+    background: var(--brand-2);
+    transform: scaleY(0.1);
+  }
+
+  100% {
+    transform: scaleY(1);
+    background: var(--brand-1);
+  }
+}

@@ -1,0 +1,96 @@
+.levelDiv {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 97%;
+  height: 42px;
+  margin-left: 1.5%;
+  font-size: 18px;
+  border: 1px solid lightgray;
+  box-sizing: border-box;
+  justify-content: flex-start;
+}
+
+.levelItemCustom {
+  width: 100vw;
+  /* border: 2px solid blue; */
+  padding-top: 10px;
+  color: black;
+}
+
+.level {
+  display: flex;
+  border-radius: 5px;
+  /* border: 2px solid red; */
+}
+
+.is-scrollable {
+  overflow: auto;
+  position: absolute;
+  top: 120px;
+  bottom: 70px;
+  width: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.is-positive {
+  background-color: #c7f6c7;
+  font-weight: bold;
+}
+
+.positiveLabel {
+  background-color: #c7f6c7;
+  font-weight: bold;
+  width: 40px;
+  box-sizing: border-box;
+}
+
+.is-notSure {
+  background-color: palegoldenrod;
+  box-sizing: border-box;
+  width: 40px;
+  font-weight: bold;
+}
+
+.is-negative {
+  background-color: lightpink;
+  box-sizing: border-box;
+  font-weight: bold;
+  width: 40px;
+  /* border: 2px solid red; */
+}
+
+.isNegativeStatement {
+  background-color: rgba(255, 182, 193, 0.2);
+}
+
+.isUncertainStatement {
+  background-color: rgba(211, 211, 211, 0.2);
+}
+
+.isPositiveStatement {
+  background-color: rgba(199, 246, 199, 0.2);
+}
+
+.notSet {
+  background-color: whitesmoke;
+  font-weight: bold;
+}
+
+.listDiv {
+  background-color: whitesmoke;
+}
+
+.levelDiv input {
+  position: absolute;
+  top: 1000;
+  right: -1000;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+
+.levelDiv input[type="radio"]:checked + label {
+  border: 3px solid black;
+}
