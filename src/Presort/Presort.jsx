@@ -1,18 +1,18 @@
-import styled, { keyframes } from 'styled-components';
-import React, { Component } from 'react';
-import StatementList from './StatementList';
-import state from '../state';
-import calculateTimeOnPage from '../Utils/calculateTimeOnPage';
+import styled, { keyframes } from "styled-components";
+import React, { Component } from "react";
+import StatementList from "./StatementList";
+import state from "../state";
+import calculateTimeOnPage from "../Utils/calculateTimeOnPage";
 
 /* eslint react/prop-types: 0 */
 
 const handleClick = () => {
-  console.log('clicked');
-  state.setState({ displayAdmin: true, displayPresort: false });
+  console.log("clicked");
+  state.setState({ displayLanding: true, displayPresort: false });
 };
 
 const handleClick2 = () => {
-  console.log('clicked');
+  console.log("clicked");
   state.setState({ displaySort: true, displayPresort: false });
 };
 
@@ -24,7 +24,7 @@ class PreSort extends Component {
   }
 
   componentWillUnmount() {
-    calculateTimeOnPage(startTime, 'preSortPage', 'PreSortPage');
+    calculateTimeOnPage(startTime, "preSortPage", "PreSortPage");
   }
 
   render() {
@@ -39,7 +39,7 @@ class PreSort extends Component {
         <TitleDiv>
           <div>{titleText}</div>
           <div>
-            <NavButStatements onClick={handleClick}>Admin</NavButStatements>
+            <NavButStatements onClick={handleClick}>Landing</NavButStatements>
             <NavButStatements onClick={handleClick2}>Sort</NavButStatements>
           </div>
         </TitleDiv>
@@ -75,11 +75,11 @@ const fadeOut = keyframes`
 `;
 
 const PageContainer = styled.div`
-  width: 1366px;
-  height: 1004px;
+  width: 1024px;
+  height: 768px;
   background-color: #323232;
   color: whitesmoke;
-  visibility: ${props => (props.out ? 'hidden' : 'visible')};
+  visibility: ${props => (props.out ? "hidden" : "visible")};
   animation: ${props => (props.out ? fadeOut : fadeIn)} 0.2s linear;
   transition: visibility 1s linear;
 `;
@@ -104,7 +104,7 @@ const NavButStatements = styled.button`
   height: 40px;
   width: 100px;
   font-size: 25px;
-  margin-left: 845px;
+  margin-left: 145px;
   margin-top: 20px;
   color: whitesmoke;
   background: #323232;

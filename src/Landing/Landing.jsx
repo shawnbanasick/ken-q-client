@@ -49,11 +49,14 @@ const handleButtonClick = e => {
   }
 };
 
-const handleEmailButtonClick = () => {
-  console.log("email click");
+const handleStartButtonClick = () => {
+  console.log("start click");
+  state.setState({ displayLanding: false, displayPresort: true });
+
   // pullEmailHeader();
   // var link = document.getElementById('email');
-  state.setState({ displayAdmin: false, displayResults: true });
+
+  // state.setState({ displayAdmin: false, displayResults: true });
 
   // const emailAddress = 'banasick@gmail.com'; // localStorage.getItem('emailInput');
   // const mail = document.createElement('a');
@@ -97,15 +100,18 @@ class Landing extends Component {
       <PageContainer>
         <h1>Thank you for participating in this research project!</h1>
         <label htmlFor="projectNameInput">
-          Project Name:
+          Participant Name:
           <input
-            id="projectNameInput"
+            style={{ marginLeft: 5, borderRadius: 2 }}
+            id="participantNameInput"
             type="text"
             name="projectName"
-            defaultValue={projectName}
+            defaultValue="add name here"
           />
         </label>
-        <BeginQsortButton>Start Q Sort</BeginQsortButton>
+        <BeginQsortButton onClick={handleStartButtonClick}>
+          Start Q Sort
+        </BeginQsortButton>
       </PageContainer>
     );
   }
@@ -134,10 +140,13 @@ const fadeOut = keyframes`
 `;
 
 const PageContainer = styled.div`
-  /* display: grid; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
   /* justify-items: center; */
-  /* grid-template-columns: 341px 342px 342px 341px; */
-  /* grid-template-rows: 350px auto; */
+  /* grid-template-columns: 1fr; */
+  /* grid-template-rows: 250px 250px 1fr; */
   width: 1024px;
   height: 768px;
   background-color: #323232;
