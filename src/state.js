@@ -15,7 +15,8 @@ export default store({
     return newReturnValue;
   },
   /* App */
-  displayAdmin: true,
+  displayLanding: true,
+  displayAdmin: false,
   displayStatements: false,
   displayDemonstration: false,
   displayData: false,

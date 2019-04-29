@@ -78,7 +78,7 @@ const handleEmailButtonClick = () => {
   // }
 };
 
-class Admin extends Component {
+class Landing extends Component {
   render() {
     const { projectName, columnStatements, sortCharacteristics } = this.props;
 
@@ -95,21 +95,23 @@ class Admin extends Component {
 
     return (
       <PageContainer>
-        <BeginQsortButton id="goButton" onClick={handleButtonClick}>
-          <span style={{ fontSize: 20 }}>Start</span> <br />
-          <span style={{ fontSize: 110, margin: 0, padding: 0 }}>Q</span> <br />
-          <span style={{ fontSize: 20 }}>Sort</span>
-        </BeginQsortButton>
-        <ResultsSection>
-          <ResultsTitle>Results</ResultsTitle>
-          <ResultsDiv />
-        </ResultsSection>
+        <h1>Thank you for participating in this research project!</h1>
+        <label htmlFor="projectNameInput">
+          Project Name:
+          <input
+            id="projectNameInput"
+            type="text"
+            name="projectName"
+            defaultValue={projectName}
+          />
+        </label>
+        <BeginQsortButton>Start Q Sort</BeginQsortButton>
       </PageContainer>
     );
   }
 }
 
-export default view(Admin);
+export default view(Landing);
 
 const fadeIn = keyframes`
   from {
@@ -225,9 +227,9 @@ const BeginQsortButton = styled.button`
   position: relative;
   font-family: HelveticaNeue-CondensedBlack, Arial, Helvetica, sans-serif;
   margin-left: 5px;
-  width: 250px;
+  width: 150px;
+  height: 50px;
   margin-top: 2px;
-  height: 250px;
   background: #55b262;
   color: #323232;
   font-weight: 900;
@@ -235,7 +237,7 @@ const BeginQsortButton = styled.button`
   border-radius: 5px;
   grid-column-start: 4;
   grid-row-start: 1;
-  font-size: 50px;
+  font-size: 20px;
   text-align: center;
   user-select: none;
   border: 0px solid black;

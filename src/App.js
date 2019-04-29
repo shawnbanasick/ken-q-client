@@ -11,11 +11,13 @@ import Survey from './Survey/Survey';
 import SubmitData from './SubmitData/SubmitData';
 import Results from './Results/Results';
 import state from './state';
+import Landing from './Landing/Landing';
 
 /* eslint react/prop-types: 0 */
 
 class App extends Component {
   render() {
+    const displayLanding = state.getState("displayLanding");
     const displayAdmin = state.getState('displayAdmin');
     const displayPresort = state.getState('displayPresort');
     const displayStatements = state.getState('displayStatements');
@@ -32,10 +34,17 @@ class App extends Component {
       sortPageData,
       postSortData,
       surveyData,
+      landingData
     } = this.props;
 
     return (
       <PageContainer>
+        {displayLanding && (
+          <Landing
+            {...landingData}
+            out={displayLanding}
+          />
+        )}
         {displayAdmin && (
           <Admin
             {...adminData}
