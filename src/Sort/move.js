@@ -50,12 +50,12 @@ const move = (
   // to disable checking if unforced Q sorts allowed
   if (forcedSorts === true) {
     if (match === true) {
-      // state.setState({ sortCompleted: true });
+      state.setState({ sortCompleted: true });
       localStorage.setItem('sortCompleted', 'true');
-      // state.setState({ isSortingCards: false });
+      state.setState({ isSortingCards: false });
       localStorage.setItem('isSortingCards', 'false');
     } else {
-      // state.setState({ sortCompleted: false });
+      state.setState({ sortCompleted: false });
       localStorage.setItem('sortCompleted', 'false');
     }
   }

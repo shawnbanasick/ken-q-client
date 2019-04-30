@@ -28,7 +28,8 @@ export default store({
   displaySubmitData: false,
   displayResults: false,
 
-  /* Admin */
+  /* Landing */
+  showStartButton: false,
 
   /* Sort */
   result: [],

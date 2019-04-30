@@ -13,6 +13,7 @@ const prepareDataForPost = (commentArrays, surveyResults2) => {
   const resultsJson = {};
   resultsJson.randomId8 = localStorage.getItem('randomId8');
   resultsJson.randomId16 = localStorage.getItem('randomId16');
+  resultsJson.participantName = localStorage.getItem("participantName");
 
   resultsJson.startDate = localStorage.getItem('startDate');
   resultsJson.endDate = endDate;

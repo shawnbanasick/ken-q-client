@@ -9,76 +9,29 @@ import getFormattedViewTime from "../Utils/getFormattedViewTime";
 
 /* eslint react/prop-types: 0 */
 
-const handleButtonClick = e => {
-  console.log(e.target.id);
-  const buttonId = e.target.id;
-  if (buttonId === "StatementsButton") {
-    state.setState({ displayAdmin: false, displayStatements: true });
-  }
-  if (buttonId === "goButton") {
-    state.setState({ displayAdmin: false, displayPresort: true });
-
-    // shuffle the cards - once only
-    // TODO - add card shuffle
-    // const hasShuffledCards = localStorage.getItem('hasShuffled');
-    // if (hasShuffledCards !== 'true') {
-    //   const cards2 = this.props.columnStatements.statementList;
-    //   const cards = cloneDeep(cards2);
-    //   const shuffledCards = shuffle(cards);
-    //   this.props.columnStatements.statementList = shuffledCards;
-    //   localStorage.setItem(
-    //     'columnStatements',
-    //     JSON.stringify(this.props.columnStatements)
-    //   );
-    //   localStorage.setItem('hasShuffled', 'true');
-    // }
-
-    // sent participant info to state for storage
-    const randomId8 = getRandomId();
-    const randomId8b = getRandomId();
-    const randomId16 = randomId8 + randomId8b;
-
-    localStorage.setItem("randomId8", randomId8);
-    localStorage.setItem("randomId16", randomId16);
-
-    const startDate = getFormattedViewTime();
-    localStorage.setItem("startDate", startDate);
-
-    const startTime = Date.now();
-    localStorage.setItem("projectStartTime", startTime);
-  }
-};
-
 const handleStartButtonClick = () => {
   console.log("start click");
   state.setState({ displayLanding: false, displayPresort: true });
 
-  // pullEmailHeader();
-  // var link = document.getElementById('email');
+  const randomId8 = getRandomId();
+  const randomId8b = getRandomId();
+  const randomId16 = randomId8 + randomId8b;
 
-  // state.setState({ displayAdmin: false, displayResults: true });
+  localStorage.setItem("randomId8", randomId8);
+  localStorage.setItem("randomId16", randomId16);
 
-  // const emailAddress = 'banasick@gmail.com'; // localStorage.getItem('emailInput');
-  // const mail = document.createElement('a');
-  // mail.target = '_blank';
-  // mail.href =
-  //   'mailto:' + emailAddress + '?' + 'subject=Ken-Q Mobile Data&body=';
+  const startDate = getFormattedViewTime();
+  localStorage.setItem("startDate", startDate);
 
-  // // const allResults = localStorage.getItem('allResults');
-  // mail.href += 'test'; // allResults;
-  // mail.click();
+  const startTime = Date.now();
+  localStorage.setItem("projectStartTime", startTime);
+};
 
-  // state.setState({ displayAdmin: true });
+const handleAddParticipantName = e => {
+  // console.log(e.target.value);
+  localStorage.setItem("participantName", e.target.value);
 
-  // };
-
-  // function getBody() {
-  //     var emailText1 = $("#emailHeader").html();
-  //     var emailText2 = $("#incomingResults").html() + "<br><br>";
-  //     var emailText3 = $("#incomingComments").html();
-  //     var emailTextResults = emailText1 + emailText2;
-  //     return [emailTextResults, emailText3];
-  // }
+  state.setState({ showStartButton: true });
 };
 
 class Landing extends Component {
@@ -96,6 +49,9 @@ class Landing extends Component {
 
     state.setState({ sortCharacteristics });
 
+    const showStartButton = state.getState("showStartButton");
+    const participantName = localStorage.getItem("participantName");
+
     return (
       <PageContainer>
         <h1>Thank you for participating in this research project!</h1>
@@ -106,12 +62,17 @@ class Landing extends Component {
             id="participantNameInput"
             type="text"
             name="projectName"
-            defaultValue="add name here"
+            defaultValue={participantName}
+            onChange={handleAddParticipantName}
           />
         </label>
-        <BeginQsortButton onClick={handleStartButtonClick}>
-          Start Q Sort
-        </BeginQsortButton>
+        {showStartButton ? (
+          <BeginQsortButton onClick={handleStartButtonClick}>
+            Start Q Sort
+          </BeginQsortButton>
+        ) : (
+          <PlaceholderButton />
+        )}
       </PageContainer>
     );
   }
@@ -240,6 +201,32 @@ const BeginQsortButton = styled.button`
   height: 50px;
   margin-top: 2px;
   background: #55b262;
+  color: #323232;
+  font-weight: 900;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  grid-column-start: 4;
+  grid-row-start: 1;
+  font-size: 20px;
+  text-align: center;
+  user-select: none;
+  border: 0px solid black;
+  outline: none;
+
+  &:active {
+    background-color: #448e4e;
+  }
+`;
+
+const PlaceholderButton = styled.button`
+  appearance: none;
+  position: relative;
+  font-family: HelveticaNeue-CondensedBlack, Arial, Helvetica, sans-serif;
+  margin-left: 5px;
+  width: 150px;
+  height: 50px;
+  margin-top: 2px;
+  background: #323232;
   color: #323232;
   font-weight: 900;
   -webkit-border-radius: 5px;
