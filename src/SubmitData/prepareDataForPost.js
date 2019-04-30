@@ -113,9 +113,13 @@ const prepareDataForPost = (commentArrays, surveyResults2) => {
 
   resultsJson.sort = sortString;
 
-  const statementCommentsObj = JSON.parse(
+  let statementCommentsObj = JSON.parse(
     localStorage.getItem('statementCommentsObj')
-  );
+    );
+    if (statementCommentsObj === null) {
+      statementCommentsObj = {};
+    }
+    console.log("TCL: prepareDataForPost -> statementCommentsObj", JSON.stringify(statementCommentsObj));
   // CREATE COMMENT OBJECT
   for (let m = 0; m < commentKeys.length; m++) {
     const comment = statementCommentsObj[commentKeys[m]];

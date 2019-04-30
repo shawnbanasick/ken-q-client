@@ -83,7 +83,7 @@ const handleStartButtonClick = () => {
 
 class Landing extends Component {
   render() {
-    const { projectName, columnStatements, sortCharacteristics } = this.props;
+    const { columnStatements, sortCharacteristics } = this.props;
 
     const loadStatements = localStorage.getItem("loadStatements");
     if (loadStatements !== "true" || loadStatements === undefined) {

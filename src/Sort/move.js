@@ -31,7 +31,6 @@ const move = (
   result[droppableDestination.droppableId] = [...destinationListArray];
 
   // to save to state and auto update lists
-  // store.dispatch.setResult(result);
   state.setState({ result });
 
   // for sort complete checking
@@ -45,22 +44,17 @@ const move = (
   const qSortPatternClone = [...qSortPattern];
   const overloadArrayCheck = [...columnLengthCheckArray];
   const match = isEqual(columnLengthCheckArray, qSortPatternClone);
-  // console.log("TCL: qSortPatternClone", qSortPatternClone);
-  // console.log("TCL: columnLengthCheckArray", columnLengthCheckArray);
 
   checkForColumnOverload(overloadArrayCheck, forcedSorts, totalStatements);
 
   // to disable checking if unforced Q sorts allowed
   if (forcedSorts === true) {
     if (match === true) {
-      // store.dispatch.setSortCompleted(true);
       // state.setState({ sortCompleted: true });
       localStorage.setItem('sortCompleted', 'true');
-      // store.dispatch.setIsSortingCards(false);
       // state.setState({ isSortingCards: false });
       localStorage.setItem('isSortingCards', 'false');
     } else {
-      // store.dispatch.setSortCompleted(false);
       // state.setState({ sortCompleted: false });
       localStorage.setItem('sortCompleted', 'false');
     }

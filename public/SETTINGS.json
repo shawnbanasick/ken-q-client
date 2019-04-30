@@ -15,7 +15,7 @@
     "sortCompleteText": "Sort Complete!",
     "nextButtonText": "Next",
     "sortedText": "cards sorted",
-    "columnWidth": 100,
+    "columnWidth": 120,
     "cardHeight": 120,
     "horiCardMinHeight": 100,
     "totalStatements": 33,
@@ -31,31 +31,19 @@
       "white"
     ],
     "columnColorsArray": [
-      "#ffbfbf",
       "#ffcbcb",
       "#ffd8d8",
       "#ffe5e5",
       "#f5f5f5",
       "#d6f5d6",
       "#c1f0c1",
-      "#adebad",
-      "#98E698"
+      "#adebad"
     ],
     "sortCharacteristics": {
-      "qSortPattern": [2, 3, 4, 5, 5, 5, 4, 3, 2],
-      "qSortHeaders": ["N4", "N3", "N2", "N1", 0, 1, 2, 3, 4],
+      "qSortPattern": [3, 4, 5, 6, 5, 4, 3],
+      "qSortHeaders": ["N3", "N2", "N1", 0, 1, 2, 3],
       "forcedSorts": true,
-      "qSortHeaderNumbers": [
-        "-4",
-        "-3",
-        "-2",
-        "-1",
-        "0",
-        "+1",
-        "+2",
-        "+3",
-        "+4"
-      ]
+      "qSortHeaderNumbers": ["-3", "-2", "-1", "0", "+1", "+2", "+3"]
     }
   },
   "postSortData": {
@@ -278,24 +266,6 @@
         "statementNum": 30,
         "divColor": "notSet",
         "statement": "30. Respect for civil liberties and minority rights"
-      },
-      {
-        "id": "s31",
-        "statementNum": 31,
-        "divColor": "notSet",
-        "statement": "31. Virtue tends to be its own reward"
-      },
-      {
-        "id": "s32",
-        "statementNum": 32,
-        "divColor": "notSet",
-        "statement": "32. Position of depressed classes must be raised"
-      },
-      {
-        "id": "s33",
-        "statementNum": 33,
-        "divColor": "notSet",
-        "statement": "33. Emphasis is on getting ahead"
       }
     ]
   },

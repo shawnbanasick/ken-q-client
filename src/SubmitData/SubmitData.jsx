@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-import './SubmitData.css';
-import state from '../state';
+import React, { Component } from "react";
+import "./SubmitData.css";
+import state from "../state";
 
 /* eslint react/prop-types: 0 */
 
 const handleClick = () => {
-  console.log('clicked');
+  console.log("clicked");
   state.setState({ displayAdmin: true, displaySubmitData: false });
 };
 
@@ -15,7 +15,7 @@ class SubmitData extends Component {
     this.state = {
       showSuccess: false,
       showError: false,
-      showTransmit: true,
+      showTransmit: true
     };
     this.transmitData = this.transmitData.bind(this);
     this.showSuccess = this.showSuccess.bind(this);
@@ -30,7 +30,7 @@ class SubmitData extends Component {
     this.setState({
       showSuccess: true,
       showError: false,
-      showTransmit: false,
+      showTransmit: false
     });
   };
 
@@ -38,17 +38,17 @@ class SubmitData extends Component {
     this.setState({
       showError: true,
       showTransmit: false,
-      showSuccess: false,
+      showSuccess: false
     });
   };
 
   transmitData = () => {
-    const resultsJson = JSON.parse(localStorage.getItem('allResults'));
+    const resultsJson = JSON.parse(localStorage.getItem("allResults"));
     // console.log('TCL: SubmitData -> transmitData -> resultsJson', resultsJson);
     // const firebase = window.firebase;
     const participantId = resultsJson.randomId16;
     console.log(
-      'TCL: SubmitData -> transmitData -> participantId',
+      "TCL: SubmitData -> transmitData -> participantId",
       participantId
     );
 
@@ -117,13 +117,6 @@ class SubmitData extends Component {
               <div className="loadingScreenTitle">
                 Survey Complete - Thank You!
               </div>
-              <button
-                className="postSortButton"
-                type="button"
-                onClick={handleClick}
-              >
-                Return
-              </button>
             </div>
           </div>
         </div>

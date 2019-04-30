@@ -27,6 +27,13 @@ class App extends Component {
     const displaySubmitData = state.getState('displaySubmitData');
     const displayResults = state.getState('displayResults');
 
+    // initialize
+    const checkInitialize = localStorage.getItem("isInitialized");
+    if (checkInitialize === null) {
+      localStorage.setItem("isSortingCards", "true");
+      localStorage.setItem("checkInitialize", "initialized");
+    }
+
     const {
       adminData,
       columnStatements,
@@ -42,6 +49,8 @@ class App extends Component {
         {displayLanding && (
           <Landing
             {...landingData}
+            sortCharacteristics={sortPageData.sortCharacteristics}
+            columnStatements={columnStatements}
             out={displayLanding}
           />
         )}

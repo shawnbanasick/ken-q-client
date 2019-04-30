@@ -65,14 +65,15 @@
   padding-right: 5px;
   padding-left: 5px;
   width: 100px;
+  height: 100px;
   border: 2px solid lightgray;
   text-align: center;
 }
 
 .footerMessageBox p {
   padding: 0px;
-  margin-top: 20px;
-  font-size: 20px;
+  margin-top: 10px;
+  font-size: 10px;
   color: #3273dc;
 }
 
@@ -84,7 +85,7 @@
 }
 
 .cardSlider {
-  width: 1360px;
+  width: 1024px;
   overflow: hidden;
   display: flex;
   justify-content: center;

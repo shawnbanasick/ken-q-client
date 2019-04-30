@@ -19,7 +19,7 @@ const getItemStyleHori = (
   }
   return {
     userSelect: 'none',
-    webkitUserSelect: 'none',
+    WebkitUserSelect: 'none',
     lineHeight: `1em`,
     fontSize: 15,
     height: cardHeight,
@@ -29,7 +29,8 @@ const getItemStyleHori = (
     paddingRight: 2,
     paddingLeft: 2,
     borderRadius: `5px`,
-    marginBottom: 10,
+    marginBottom: 5,
+    marginTop: 5,
     marginRight: `2px`,
     marginLeft: `2px`,
     display: 'flex',
