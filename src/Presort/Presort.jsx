@@ -39,8 +39,7 @@ class PreSort extends Component {
         <TitleDiv>
           <div>{titleText}</div>
           <div>
-            <NavButStatements onClick={handleClick}>Landing</NavButStatements>
-            <NavButStatements onClick={handleClick2}>Sort</NavButStatements>
+            <NavButStatements onClick={handleClick2}>Next</NavButStatements>
           </div>
         </TitleDiv>
         <StatementList

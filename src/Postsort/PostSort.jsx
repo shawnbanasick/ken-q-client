@@ -1,22 +1,22 @@
-import './PostSort.css';
-import React, { Component } from 'react';
-import LowCards from './LowCards';
-import LowCards2 from './LowCards2';
-import HighCards from './HighCards';
-import HighCards2 from './HighCards2';
-import NeutralCards from './NeutralCards';
-import state from '../state';
-import calculateTimeOnPage from '../Utils/calculateTimeOnPage';
+import "./PostSort.css";
+import React, { Component } from "react";
+import LowCards from "./LowCards";
+import LowCards2 from "./LowCards2";
+import HighCards from "./HighCards";
+import HighCards2 from "./HighCards2";
+import NeutralCards from "./NeutralCards";
+import state from "../state";
+import calculateTimeOnPage from "../Utils/calculateTimeOnPage";
 // import displayDataObject from "../../Utils/displayDataObjectPostSort";
 
 /* eslint react/prop-types: 0 */
 
 const styles = {
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'center',
-  width: '100%',
-  paddingBottom: 25,
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center",
+  width: "100%",
+  paddingBottom: 25
 };
 
 let startTime;
@@ -31,13 +31,13 @@ class PostSort extends Component {
   }
 
   componentWillUnmount() {
-    calculateTimeOnPage(startTime, 'postSortPage', 'PostSortPage');
+    calculateTimeOnPage(startTime, "postSortPage", "PostSortPage");
   }
 
   render() {
     // pull data from localStorage
     const columnStatements = JSON.parse(
-      localStorage.getItem('columnStatements')
+      localStorage.getItem("columnStatements")
     );
     // if (!columnStatements) {
     //   console.log("no local storage");
@@ -45,7 +45,7 @@ class PostSort extends Component {
     // }
 
     console.log(
-      'TCL: PostSort -> render -> columnStatements',
+      "TCL: PostSort -> render -> columnStatements",
       columnStatements
     );
 
@@ -56,10 +56,10 @@ class PostSort extends Component {
       cardHeight,
       agreeObj,
       disagreeObj,
-      neutralObj,
+      neutralObj
     } = this.props;
 
-    console.log('TCL: PostSort -> render -> this.props', this.props);
+    console.log("TCL: PostSort -> render -> this.props", this.props);
 
     const highCards = columnStatements.vCols[agreeObj.columnDisplay];
     const highCards2 = columnStatements.vCols[agreeObj.columnDisplay2];
@@ -77,7 +77,7 @@ class PostSort extends Component {
             type="button"
             onClick={handleClick}
           >
-            Admin
+            Next
           </button>
         </div>
         <div className="scrollableDiv">

@@ -46,27 +46,28 @@ class SubmitData extends Component {
     const resultsJson = JSON.parse(localStorage.getItem("allResults"));
     console.log(
       "TCL: SubmitData -> transmitData -> resultsJson",
-      JSON.stringify(resultsJson)
+      JSON.stringify(resultsJson[0])
     );
-    // const firebase = window.firebase;
+    const firebase = window.firebase;
+    let participantId = localStorage.getItem("randomId16");
 
-    // firebase
-    //   .database()
-    //   .ref(participantId)
-    //   .set(resultsJson, error => {
-    //     if (error) {
-    //       console.log(JSON.stringify('there was a data transmission error'));
-    //       this.showError();
-    //     } else {
-    //       console.log(JSON.stringify('data transmission success'));
-    //       this.showSuccess();
-    //     }
-    //   });
+    firebase
+      .database()
+      .ref(participantId)
+      .set(resultsJson, error => {
+        if (error) {
+          console.log(JSON.stringify("there was a data transmission error"));
+          this.showError();
+        } else {
+          console.log(JSON.stringify("data transmission success"));
+          this.showSuccess();
+        }
+      });
 
-    // console.log(
-    //   "TCL: SubmitData -> componentDidMount -> resultsJson",
-    //   JSON.stringify(resultsJson, null, 2)
-    // );
+    console.log(
+      "TCL: SubmitData -> componentDidMount -> resultsJson",
+      JSON.stringify(resultsJson, null, 2)
+    );
   };
 
   render() {

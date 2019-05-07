@@ -11,11 +11,12 @@ const NumberCardsSortedMessage = props => {
   const numSortedStatements = state.getState("numSortedStatements");
 
   // const isSortingCards = useStore(state => state.isSortingCards);
-  // const isSortingCards = state.getState('isSortingCards');
-  const isSortingCards = localStorage.getItem("isSortingCards");
+  const isSortingCards = state.getState("isSortingCards");
+  console.log("TCL: isSortingCards", isSortingCards);
+  // const isSortingCards = localStorage.getItem("isSortingCards");
   console.log("TCL: isSortingCards", isSortingCards);
 
-  if (isSortingCards === "true") {
+  if (isSortingCards === true) {
     // if (true === true) {
     return (
       <CardsSortedDiv>

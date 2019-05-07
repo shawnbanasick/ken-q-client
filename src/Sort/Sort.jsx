@@ -272,7 +272,7 @@ const FooterMessageBox = styled.div`
   height: ${props => `${+props.cardHeight}px`};
   border: 2px solid lightgray;
   text-align: center;
-  border: 2px solid red;
+  border: 2px solid black;
 
   p {
     padding: 0px;

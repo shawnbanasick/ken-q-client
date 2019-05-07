@@ -144,9 +144,9 @@ const prepareDataForPost = (commentArrays, surveyResults2) => {
     allResults = {};
   }
 
-  allResults[resultsJson.randomId16] = { ...resultsJson };
+  // allResults[resultsJson.randomId16] = { ...resultsJson };
 
-  localStorage.setItem('allResults', JSON.stringify(allResults));
+  localStorage.setItem('allResults', JSON.stringify(resultsJson));
 
   console.log(
     'TCL: prepareDataForPost -> allResults',
